@@ -6,12 +6,16 @@ class InputFieldArea extends StatelessWidget {
   final IconData icon;
   final TextEditingController controller;
 
-  InputFieldArea({this.hint, this.obscure, this.icon, this.controller});
+  const InputFieldArea(
+      {required this.hint,
+      required this.obscure,
+      required this.icon,
+      required this.controller});
 
   @override
   Widget build(BuildContext context) {
     return (Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         border: Border(
           bottom: BorderSide(
             width: 0.5,

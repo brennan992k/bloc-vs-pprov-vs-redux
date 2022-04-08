@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_arch/app.dart';
+import 'package:bpr/app.dart';
 
 ///
 /// App showcases three main Flutter architectures

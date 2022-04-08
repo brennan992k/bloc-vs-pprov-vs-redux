@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_arch/arch/provider/model/userlogin.dart';
+import 'package:bpr/arch/provider/model/userlogin.dart';
 
 class ResultWidget extends StatelessWidget {
   @override

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_arch/arch/bloc/bloc_sign_in_user.dart';
-import 'package:flutter_arch/arch/bloc/model/userlogin.dart';
-import 'package:flutter_arch/arch/bloc/repo/repository_user.dart';
-import 'package:flutter_arch/arch/bloc/widget/widget_result.dart';
-import 'package:flutter_arch/common/widget/widget_form_login.dart';
+import 'package:bpr/arch/bloc/bloc_sign_in_user.dart';
+import 'package:bpr/arch/bloc/model/userlogin.dart';
+import 'package:bpr/arch/bloc/repo/repository_user.dart';
+import 'package:bpr/arch/bloc/widget/widget_result.dart';
+import 'package:bpr/common/widget/widget_form_login.dart';
 
 class BlocExamplePage extends StatefulWidget {
-  BlocExamplePage({Key key, this.title}) : super(key: key);
+  const BlocExamplePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
@@ -15,25 +15,24 @@ class BlocExamplePage extends StatefulWidget {
 }
 
 class _BlocExamplePageState extends State<BlocExamplePage> {
-
   // WARN: use proper initialization for BLOC ! This is just for demonstration
-  UserSignInBloc _userSignInBloc = UserSignInBloc(UserRepository());
+  final UserSignInBloc _userSignInBloc = UserSignInBloc(UserRepository());
 
   @override
   Widget build(BuildContext context) {
     // 1: provide state
     return Scaffold(
-        appBar: AppBar(
-          title: Text(widget.title),
+      appBar: AppBar(
+        title: Text(widget.title),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            LoginFormWidget(onSignIn),
+            ResultWidget(_userSignInBloc.userSigned),
+          ],
         ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              LoginFormWidget(onSignIn),
-              ResultWidget(_userSignInBloc.userSigned),
-            ],
-          ),
       ),
     );
   }
@@ -43,5 +42,3 @@ class _BlocExamplePageState extends State<BlocExamplePage> {
     print("Sign-in clicked");
   }
 }
-
-

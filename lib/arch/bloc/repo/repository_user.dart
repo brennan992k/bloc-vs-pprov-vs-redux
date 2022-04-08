@@ -1,5 +1,5 @@
-import 'package:flutter_arch/arch/bloc/model/userlogin.dart';
-import 'package:flutter_arch/arch/bloc/model/usersession.dart';
+import 'package:bpr/arch/bloc/model/userlogin.dart';
+import 'package:bpr/arch/bloc/model/usersession.dart';
 
 class UserRepository {
 

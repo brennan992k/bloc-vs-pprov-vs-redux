@@ -1,4 +1,4 @@
-import 'package:flutter_arch/arch/redux/model/userlogin.dart';
+import 'package:bpr/arch/redux/model/userlogin.dart';
 
 /// In response to LoginButton click, handled by middleware
 class LoginRequestAction {

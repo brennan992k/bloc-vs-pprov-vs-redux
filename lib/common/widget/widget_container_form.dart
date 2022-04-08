@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_arch/common/widget/widget_inputform.dart';
+import 'package:bpr/common/widget/widget_inputform.dart';
 
 class FormContainer extends StatelessWidget {
   final TextEditingController userTxtController;

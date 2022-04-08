@@ -1,9 +1,9 @@
-import 'package:flutter_arch/arch/redux/model/userlogin.dart';
+import 'package:bpr/arch/redux/model/userlogin.dart';
 import 'package:meta/meta.dart';
 
 @immutable
 class AppState {
-  final UserLogin loggedUser;
+  final UserLogin? loggedUser;
 
   AppState({this.loggedUser});
 
@@ -13,7 +13,7 @@ class AppState {
   int get hashCode => loggedUser.hashCode;
 
   AppState copyWith({
-    UserLogin loggedUser,
+    UserLogin? loggedUser,
   }) {
     return AppState(
       loggedUser: loggedUser ?? this.loggedUser,

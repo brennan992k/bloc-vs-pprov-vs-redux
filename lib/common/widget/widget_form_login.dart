@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_arch/common/widget/widget_container_form.dart';
-import 'package:flutter_arch/common/widget/widget_signin_btn.dart';
+import 'package:bpr/common/widget/widget_container_form.dart';
+import 'package:bpr/common/widget/widget_signin_btn.dart';
 
 class LoginFormWidget extends StatefulWidget {
   final Function(String user, String password, BuildContext context) onSignIn;
 
-  LoginFormWidget(this.onSignIn);
+  const LoginFormWidget(this.onSignIn);
 
   @override
   _LoginFormWidgetState createState() => _LoginFormWidgetState();

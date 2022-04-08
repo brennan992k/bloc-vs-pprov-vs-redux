@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 
 class UserLogin with ChangeNotifier {
-  String _user;
-  String _pass;
-  bool _result;
+  String? _user;
+  String? _pass;
+  bool _result = false;
 
-  String get user => _user;
+  String? get user => _user;
 
-  String get pass => _pass;
+  String? get pass => _pass;
 
   bool get result => _result;
 
-  void checkCredentials(String user, String password) {
+  void checkCredentials(String? user, String? password) {
     _user = user;
     _pass = password;
 
@@ -20,8 +20,9 @@ class UserLogin with ChangeNotifier {
         password != null &&
         password.isNotEmpty) {
       _result = true;
-    } else
+    } else {
       _result = false;
+    }
 
     notifyListeners();
   }

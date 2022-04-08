@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 class SignInButton extends StatelessWidget {
-  final Function onSingInClickListener;
+  final void Function() onSingInClickListener;
 
-  SignInButton(this.onSingInClickListener);
+  const SignInButton(this.onSingInClickListener);
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -12,11 +13,11 @@ class SignInButton extends StatelessWidget {
         width: 320.0,
         height: 60.0,
         alignment: FractionalOffset.center,
-        decoration: BoxDecoration(
-          color: const Color.fromRGBO(247, 64, 106, 1.0),
+        decoration: const BoxDecoration(
+          color: Color.fromRGBO(247, 64, 106, 1.0),
           borderRadius: BorderRadius.all(const Radius.circular(30.0)),
         ),
-        child: Text(
+        child: const Text(
           "Sign In",
           style: TextStyle(
             color: Colors.white,

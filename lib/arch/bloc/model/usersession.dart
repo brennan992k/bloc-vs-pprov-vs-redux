@@ -19,13 +19,11 @@ class UserSignedOff extends UserAuthenticationState {}
 
 @immutable
 class UserUnauthenticated extends UserAuthenticationState {
-  final String user;
-  final Exception exception;
+  final String? user;
+  final Exception? exception;
 
   UserUnauthenticated({
     this.user,
     this.exception,
   });
 }
-
-

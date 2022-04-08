@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_arch/arch/bloc/model/usersession.dart';
+import 'package:bpr/arch/bloc/model/usersession.dart';
 
 class ResultWidget extends StatefulWidget {
 

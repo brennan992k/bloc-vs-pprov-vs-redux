@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_arch/arch/redux/actions/actions.dart';
-import 'package:flutter_arch/arch/redux/model/app_state.dart';
-import 'package:flutter_arch/arch/redux/widget/widget_result.dart';
-import 'package:flutter_arch/common/widget/widget_form_login.dart';
+import 'package:bpr/arch/redux/actions/actions.dart';
+import 'package:bpr/arch/redux/model/app_state.dart';
+import 'package:bpr/arch/redux/widget/widget_result.dart';
+import 'package:bpr/common/widget/widget_form_login.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 
 class ReduxExamplePage extends StatefulWidget {
-  ReduxExamplePage({Key key, this.title}) : super(key: key);
+  const ReduxExamplePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
@@ -19,24 +19,25 @@ class _ReduxExamplePageState extends State<ReduxExamplePage> {
   Widget build(BuildContext context) {
     // 1: provide state
     return Scaffold(
-        appBar: AppBar(
-          title: Text(widget.title),
+      appBar: AppBar(
+        title: Text(widget.title),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            LoginFormWidget(onSignIn),
+            ResultWidget(),
+          ],
         ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              LoginFormWidget(onSignIn),
-              ResultWidget(),
-            ],
-          ),
-        ),
-      );
+      ),
+    );
   }
 
   void onSignIn(String user, String password, BuildContext context) {
     setState(() {
-      StoreProvider.of<AppState>(context).dispatch(LoginRequestAction(user, password));
+      StoreProvider.of<AppState>(context)
+          .dispatch(LoginRequestAction(user, password));
     });
   }
 }
