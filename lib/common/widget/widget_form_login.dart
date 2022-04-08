@@ -2,16 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_arch/common/widget/widget_container_form.dart';
 import 'package:flutter_arch/common/widget/widget_signin_btn.dart';
 
-///
-/// LoginForm
-///
-/// [U]  Username:
-/// [L]  Password
-///
-///      [Sign in button]
-///
 class LoginFormWidget extends StatefulWidget {
-
   final Function(String user, String password, BuildContext context) onSignIn;
 
   LoginFormWidget(this.onSignIn);
@@ -33,7 +24,10 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
           FormContainer(userTxtController, passTxtController),
           Padding(
             padding: const EdgeInsets.only(top: 25.0),
-            child: SignInButton(() => widget.onSignIn(userTxtController.value.text, passTxtController.value.text, context)),
+            child: SignInButton(() => widget.onSignIn(
+                userTxtController.value.text,
+                passTxtController.value.text,
+                context)),
           )
         ],
       ),
